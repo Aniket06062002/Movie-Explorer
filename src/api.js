@@ -32,3 +32,25 @@ export async function UpComingMovies() {
     }
 }
 
+export async function fetchMovieDetails(movieId) {
+    try {
+      const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US`);
+      const data = await response.json();
+      return data; // Assuming the API response contains movie details
+    } catch (error) {
+      console.error('Error fetching movie details:', error);
+      return null; // Return null in case of an error
+    }
+  }
+
+  export async function fetchCast(movieId) {
+    try {
+      const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US`);
+      const data = await response.json();
+      return data; // Assuming the API response contains movie details
+    } catch (error) {
+      console.error('Error fetching movie details:', error);
+      return null; // Return null in case of an error
+    }
+  }
+  

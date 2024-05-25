@@ -9,6 +9,7 @@ import Home from './Pages/Home.jsx'
 import TopRated from './Pages/TopRated.jsx'
 import UpComingMov from './Pages/UpComingMov.jsx'
 import HeroSec from './Components/MovieDetail.jsx'
+import MovieDetail from './Components/MovieDetail.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path='toprated' element={<TopRated />} />
       <Route path='upcoming' element={<UpComingMov />} />
       <Route path='Hero' element={ <HeroSec/>} />
+      <Route path='movie/:movieId' element={<MovieDetail />} />
       
 
       
