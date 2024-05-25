@@ -37,8 +37,14 @@ body {
 .Carousel {
     padding: auto;
     margin-top: 4rem;
+    margin-left: 4rem;
 }
 
 .inside img {
     padding: 1rem;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+  }
