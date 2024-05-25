@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+    color: aliceblue;
+}
+
+.MovieDetails{
+    background-color: rgb(13, 13, 37);
+    color: azure;
+    margin-top: 3rem;
+    border-radius: 1rem;
+}
+
+.leftSection{
+    padding: 1rem;
+}
+
+.RightSec{
+    padding: 0;
+}
+.image-container {
+    height: 100%; /* Set the height of the container to match its parent */
+    overflow: hidden; /* Hide any content that overflows the container */
+  }
+  
+  .image-container img {
+    height: 100%; /* Set the height of the image to 100% of its container */
+    width: 100%; /* Set the width of the image to 100% of its container */
+    object-fit: cover; /* Ensure the image covers the entire container while maintaining aspect ratio */
+  }
