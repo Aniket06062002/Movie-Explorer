@@ -38,9 +38,6 @@ function MovieDetail() {
         </Col>
       </Row>
     </Container>
-
-    <MyCast/>
-
     </>
   );
 }
