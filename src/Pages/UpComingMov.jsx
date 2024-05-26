@@ -13,15 +13,13 @@ const Home = () => {
     loadMovies();
   }, []);
   return (
-    <>
-      <div className="container mt-5">
-        <div className="row">
-          {movies.map((movie) => (
-            <Cards key={movie.id} movie={movie} />
-          ))}
-        </div>
+    <div className="container mt-5">
+      <div className="row">
+        {movies.map((movie) => (
+          <Cards key={movie.id} movie={movie} />
+        ))}
       </div>
-    </>
+    </div>
   )
 }
 
