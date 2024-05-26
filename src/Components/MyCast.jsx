@@ -56,6 +56,7 @@ function MyCast() {
             className="img-fluid"
           />
           <p>{member.name}</p>
+          <p>Charactor : {member.character}</p>
         </div>
       ))}
     </Carousel>
