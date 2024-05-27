@@ -9,6 +9,9 @@ body {
     margin-top: 3rem;
     border-radius: 1rem;
 }
+.MovieDetails h4{
+  padding: 1rem;
+}
 
 .leftSection {
     padding: 1rem;
@@ -56,14 +59,13 @@ h4 {
     padding: 3rem;
 }
 
-/* Add this to your CSS file */
+
 .pagination {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
     padding-bottom: 2rem;
 }
-
 
 .pagination span {
     display: inline-block;

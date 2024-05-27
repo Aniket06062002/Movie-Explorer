@@ -53,9 +53,6 @@ function MovieDetail() {
       </Container>
 
 
-
-      {/* calling cast Components */}
-
       <MyCast /> 
     
     </>

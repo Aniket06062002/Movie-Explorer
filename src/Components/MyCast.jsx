@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { fetchCast } from '../api'; // Adjust the path as necessary
+import { fetchCast } from '../api'; 
 import { useParams } from 'react-router-dom';
 
 function MyCast() {
@@ -44,23 +44,22 @@ function MyCast() {
 
   return (
     <>
-    <h3 className='Carousel'>
+      <h3 className='Carousel'>
         Cast
-    </h3>
-    <Carousel responsive={responsive} >
-      {cast.map((member) => (
-        <div key={member.id} className='inside'>
-          <img
-            src={`https://image.tmdb.org/t/p/w200${member.profile_path}`}
-            alt={member.name}
-            className="img-fluid"
-          />
-          <p>{member.name}</p>
-          <p>Charactor : {member.character}</p>
-        </div>
-      ))}
-    </Carousel>
-    
+      </h3>
+      <Carousel responsive={responsive}>
+        {cast.map((member) => (
+          <div key={member.id} className='inside'>
+            <img
+              src={member.profile_path ? `https://image.tmdb.org/t/p/w200${member.profile_path}` : 'path_to_placeholder_image'}
+              alt={member.name}
+              className="img-fluid"
+            />
+            <p>{member.name}</p>
+            <p>Character: {member.character}</p>
+          </div>
+        ))}
+      </Carousel>
     </>
   );
 }
