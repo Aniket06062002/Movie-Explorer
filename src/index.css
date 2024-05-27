@@ -39,7 +39,8 @@ body {
 .inside img {
     padding: 1rem;
 }
-.inside p{
+
+.inside p {
     margin-left: 1rem;
     text-align: start;
     margin-bottom: 2px;
@@ -50,6 +51,22 @@ a {
     text-decoration: none;
     color: inherit;
 }
-h4{
+
+h4 {
     padding: 3rem;
+}
+
+/* Add this to your CSS file */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+
+.pagination span {
+    display: inline-block;
+    margin: 0 10px;
+    line-height: 2;
 }

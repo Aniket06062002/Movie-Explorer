@@ -1,40 +1,42 @@
 // Method for PopularMovies
 
-export async function PopularMovies() {
+export async function PopularMovies(page = 1) {
   try {
-    const response = await fetch('https://api.themoviedb.org/3/movie/popular?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=1');
+    const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=${page}`);
     const data = await response.json();
-    return data.results; 
+    return data; 
   } catch (error) {
     console.error('Error fetching data:', error);
-    return []; 
+    return { results: [], total_pages: 1 }; 
   }
 }
 
 // Method for TopRatedMovies
 
-export async function TopRatedMovies() {
+export async function TopRatedMovies(page = 1) {
   try {
-    const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=1');
+    const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=${page}`);
     const data = await response.json();
-    return data.results; 
+    return data; 
   } catch (error) {
     console.error('Error fetching data:', error);
-    return []; 
+    return { results: [], total_pages: 1 };
   }
 }
+
 // Method for UpComingMovies
 
-export async function UpComingMovies() {
+export async function UpComingMovies(page = 1) {
   try {
-    const response = await fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=1');
+    const response = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=${page}`);
     const data = await response.json();
-    return data.results; 
+    return data;
   } catch (error) {
     console.error('Error fetching data:', error);
-    return []; 
+    return { results: [], total_pages: 1 };
   }
 }
+
 
 //Method for Overall movie details
 
@@ -64,19 +66,13 @@ export async function fetchCast(movieId) {
 
 // Method for SearchResult
 
-export async function searchMovies(movieName) {
-  if (!movieName) return [];
+export async function searchMovies(query, page = 1) {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&query=${movieName}&page=1`);
-    if (!response.ok) {
-      throw new Error('Failed to fetch movie data');
-    }
+    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&query=${query}&page=${page}`);
     const data = await response.json();
-    console.log('API response data:', data);
-    return data.results;
+    return data; 
   } catch (error) {
-    console.error('Error fetching the movie data:', error);
-    return [];
+    console.error('Error fetching data:', error);
+    return { results: [], total_pages: 1 }; 
   }
 }
-
